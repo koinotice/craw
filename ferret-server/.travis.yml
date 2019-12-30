@@ -1,0 +1,37 @@
+language: go
+
+sudo: required
+
+os:
+- linux
+
+go:
+- "1.11.x"
+- "1.12.x"
+- stable
+
+install:
+- export GO111MODULE=on
+- go get -u github.com/mgechev/revive
+- go get -u github.com/go-swagger/go-swagger/cmd/swagger
+
+stages:
+- lint
+- compile
+- test
+
+jobs:
+  include:
+  - stage: lint
+    script:
+    - make vet
+    - make lint
+  - stage: compile
+    script:
+    - go mod vendor
+    - make generate
+    - make compile
+  - stage: test
+    script:
+    - go mod vendor
+    - make cover

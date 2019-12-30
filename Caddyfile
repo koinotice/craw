@@ -1,0 +1,38 @@
+0.0.0.0:80 {
+    gzip
+    browse
+    root /www
+    log stdout
+
+    rewrite / {
+    		to {path} {path}/ /
+    	}
+}
+0.0.0.0:80/api {
+        log stdout
+
+    proxy / http://ferret:8080 {
+                    transparent
+                    without /api/
+
+                }
+}
+0.0.0.0:80/api/ {
+        log stdout
+
+    proxy / http://ferret:8080 {
+                    transparent
+                    without /api/
+
+                }
+}
+0.0.0.0:80/admin {
+        log stdout
+
+    proxy / http://arangodb:8529 {
+                    transparent
+                    without /admin/
+
+                }
+}
+

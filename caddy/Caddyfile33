@@ -1,0 +1,16 @@
+:80 {
+    gzip
+    browse
+    proxy /api http://0.0.0.0:9090/api {
+            header_upstream Host {host}
+            header_upstream X-Real-IP {remote}
+    }
+    # prometheus 0.0.0.0:9180
+    log stdout
+    errors stderr
+
+    ext .md
+    markdown
+}
+
+

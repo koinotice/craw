@@ -1,0 +1,62 @@
+version: '3.3'
+configs:
+  caddy_config:
+    file: ./Caddyfile
+
+volumes:
+  certs: {}
+
+services:
+  caddy:
+    build:
+      context: ./caddy
+      dockerfile: Dockerfile
+      args:
+        CADDY_VERSION: ${CADDY_VERSION:-0.10.9}
+    image: openfaas/caddy:${CADDY_VERSION:-0.10.9}
+    container_name: caddy
+    ports:
+      - 9000:80
+      - 4430:443
+      - 9180:9180
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - certs:/.caddy
+      - ./build:/www
+
+
+
+
+  ferret:
+    build: ./ferret-server
+    container_name:  ferret-server
+    #      command: /bin/vgate
+    restart: always
+    ports:
+      - 9090:8080
+
+
+
+  arangodb:
+    image: arangodb/arangodb
+    volumes:
+      - ./data/arangodb:/var/lib/arangodb3
+    ports:
+      - 8529:8529
+    environment:
+      - ARANGO_NO_AUTH=0
+      - ARANGO_ROOT_PASSWORD=root
+  mongo:
+    image: mongo:latest
+    restart: always
+      #    volumes:
+    #       - "/opt/crawlab/mongo/data/db:/data/db"  # make data persistent 持久化
+    ports:
+      - "27017:27017"  # expose port to host machine 暴露接口到宿主机
+  redis:
+    image: redis:latest
+    restart: always
+    # volumes:
+    #   - "/opt/crawlab/redis/data:/data"  # make data persistent 持久化
+    # ports:
+    #   - "6379:6379"  # expose port to host machine 暴露接口到宿主机

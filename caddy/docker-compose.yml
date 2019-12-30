@@ -1,0 +1,27 @@
+version: "3.3"
+
+volumes:
+  certs: {}
+
+services:
+  caddy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        CADDY_VERSION: ${CADDY_VERSION:-0.10.9}
+    image: openfaas/caddy:${CADDY_VERSION:-0.10.9}
+    container_name: caddy
+    ports:
+      - 9000:80
+      - 4430:443
+      - 9180:9180
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - certs:/.caddy
+      - ./web:/www
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:80"]
+#      interval: 5s
+#      timeout: 1s
+#      retries: 3
