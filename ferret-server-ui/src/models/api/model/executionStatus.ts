@@ -10,16 +10,11 @@
  * Do not edit the class manually.
  */
 
+
 /**
  * Execution stats
  */
-export type ExecutionStatus =
-    | 'unknown'
-    | 'queued'
-    | 'running'
-    | 'completed'
-    | 'cancelled'
-    | 'errored';
+export type ExecutionStatus = 'unknown' | 'queued' | 'running' | 'completed' | 'cancelled' | 'errored';
 
 export const ExecutionStatus = {
     Unknown: 'unknown' as ExecutionStatus,

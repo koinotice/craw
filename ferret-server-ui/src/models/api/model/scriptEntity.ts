@@ -12,6 +12,7 @@
 import { ScriptExecution } from './scriptExecution';
 import { ScriptPersistence } from './scriptPersistence';
 
+
 export interface ScriptEntity {
     id: string;
     rev: string;

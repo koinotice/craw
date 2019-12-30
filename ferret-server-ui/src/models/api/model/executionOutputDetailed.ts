@@ -12,6 +12,7 @@
 import { ExecutionCause } from './executionCause';
 import { ExecutionStatus } from './executionStatus';
 
+
 /**
  * The properties that are included when fetching a single Execution.
  */
@@ -21,7 +22,7 @@ export interface ExecutionOutputDetailed {
     scriptRev: string;
     status: ExecutionStatus;
     cause: ExecutionCause;
-    params?: { [key: string]: any };
+    params?: { [key: string]: any; };
     startedAt?: string;
     endedAt?: string;
     logs?: string[];

@@ -12,6 +12,7 @@
 import { DataOutput } from './dataOutput';
 import { SearchResult } from './searchResult';
 
+
 export interface InlineResponse2004 {
     data?: DataOutput[];
     searchResult?: SearchResult;

@@ -12,6 +12,7 @@
 import { ProjectOutput } from './projectOutput';
 import { SearchResult } from './searchResult';
 
+
 export interface InlineResponse200 {
     data: ProjectOutput[];
     searchResult?: SearchResult;

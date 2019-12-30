@@ -10,10 +10,11 @@
  * Do not edit the class manually.
  */
 
+
 /**
  * Represents script execution settings like query and params
  */
 export interface ScriptExecution {
     query: string;
-    params?: { [key: string]: any };
+    params?: { [key: string]: any; };
 }

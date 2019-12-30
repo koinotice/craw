@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+
 /**
  * The properties that are shared amongst all versions of the Data model.
  */

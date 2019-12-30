@@ -12,6 +12,7 @@
 import { ScriptOutput } from './scriptOutput';
 import { SearchResult } from './searchResult';
 
+
 export interface InlineResponse2001 {
     data?: ScriptOutput[];
     searchResult?: SearchResult;

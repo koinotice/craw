@@ -10,10 +10,11 @@
  * Do not edit the class manually.
  */
 
+
 /**
  * The properties that are allowed when creating or updating a Execution.
  */
 export interface ExecutionInput {
     scriptId: string;
-    params?: { [key: string]: any };
+    params?: { [key: string]: any; };
 }

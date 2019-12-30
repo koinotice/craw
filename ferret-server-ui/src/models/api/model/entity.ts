@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+
 /**
  * Represents a database entity
  */

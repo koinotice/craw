@@ -22,7 +22,7 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - certs:/.caddy
-      - ./build:/www
+      - ./ferret-server-ui/build:/www
 
 
 

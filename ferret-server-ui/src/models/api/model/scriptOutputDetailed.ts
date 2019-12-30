@@ -10,4 +10,6 @@
  * Do not edit the class manually.
  */
 
-export interface ScriptOutputDetailed {}
+
+export interface ScriptOutputDetailed {
+}

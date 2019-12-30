@@ -10,4 +10,6 @@
  * Do not edit the class manually.
  */
 
-export interface ScriptCreate {}
+
+export interface ScriptCreate {
+}

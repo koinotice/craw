@@ -12,6 +12,7 @@
 import { ExecutionOutput } from './executionOutput';
 import { SearchResult } from './searchResult';
 
+
 export interface InlineResponse2002 {
     data?: ExecutionOutput[];
     searchResult?: SearchResult;

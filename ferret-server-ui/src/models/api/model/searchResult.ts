@@ -11,6 +11,7 @@
  */
 import { Pagination } from './pagination';
 
+
 export interface SearchResult {
     paging: Pagination;
 }

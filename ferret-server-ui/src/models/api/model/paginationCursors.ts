@@ -10,6 +10,7 @@
  * Do not edit the class manually.
  */
 
+
 export interface PaginationCursors {
     before?: string;
     after?: string;

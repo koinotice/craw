@@ -11,6 +11,7 @@
  */
 import { PaginationCursors } from './paginationCursors';
 
+
 export interface Pagination {
     cursors: PaginationCursors;
     count: number;

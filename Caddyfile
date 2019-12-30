@@ -13,7 +13,7 @@
 
     proxy / http://ferret:8080 {
                     transparent
-                    without /api/
+                    without /api
 
                 }
 }
@@ -31,7 +31,7 @@
 
     proxy / http://arangodb:8529 {
                     transparent
-                    without /admin/
+                    without /admin
 
                 }
 }
