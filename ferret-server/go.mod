@@ -8,7 +8,6 @@ require (
 	github.com/antlr/antlr4 v0.0.0-20190325153624-837aa60e2c47 // indirect
 	github.com/arangodb/go-driver v0.0.0-20190419135208-92d7387e1e88
 	github.com/codegangsta/negroni v1.0.0
-	github.com/coreos/go-iptables v0.4.0 // indirect
 	github.com/corpix/uarand v0.1.0 // indirect
 	github.com/go-openapi/errors v0.19.2
 	github.com/go-openapi/loads v0.19.2
@@ -30,5 +29,5 @@ require (
 	github.com/sethgrid/pester v0.0.0-20190127155807-68a33a018ad0 // indirect
 	github.com/smartystreets/assertions v0.0.0-20190401211740-f487f9de1cd3 // indirect
 	github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a
-	golang.org/x/net v0.0.0-20190613194153-d28f0bde5980
+	golang.org/x/net v0.7.0
 )
